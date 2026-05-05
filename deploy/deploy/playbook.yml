@@ -1,0 +1,11 @@
+---
+- name: Deploy JAR File
+  hosts: webserver
+  become: yes
+
+  tasks:
+    - name: Copy jar file
+      copy:
+        src: ../target/my-app.jar
+        dest: /home/ubuntu/my-app.jar
+        mode: '0644'
